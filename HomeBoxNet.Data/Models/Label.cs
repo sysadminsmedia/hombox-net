@@ -1,8 +1,9 @@
 using System.ComponentModel.DataAnnotations;
+using HomeBoxNet.Data.Models.Partials;
 
 namespace HomeBoxNet.Data.Models;
 
-public class Label
+public class Label : DateTimeModel
 {
     /// <summary>
     /// Unique GUID ID for the label
@@ -44,9 +45,6 @@ public class Label
     /// Should we invert the black text of a label to white?
     /// </summary>
     public bool ColorInvertText { get; set; } = false;
-
-    public DateTime CreatedAt { get; set; }
-    public DateTime UpdatedAt { get; set; }
 
     /// <summary>
     /// Group that the label belongs to
