@@ -7,13 +7,13 @@ namespace HomeBoxNet.API.Controllers.v1;
 [Route("v1/locations")]
 public class LocationController : ControllerBase
 {
-    [HttpGet("")]
+    [HttpGet]
     public IActionResult GetLocations()
     {
         return Ok();
     }
     
-    [HttpPost("")]
+    [HttpPost]
     public IActionResult CreateLocation()
     {
         return Ok();

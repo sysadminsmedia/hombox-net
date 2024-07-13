@@ -23,4 +23,28 @@ public class GroupController : ControllerBase
     {
         return Ok();
     }
+    
+    [HttpGet("statistics")]
+    public IActionResult GetStatistics()
+    {
+        return Ok();
+    }
+    
+    [HttpGet("statistics/labels")]
+    public IActionResult GetLabelStatistics()
+    {
+        return Ok();
+    }
+    
+    [HttpGet("statistics/locations")]
+    public IActionResult GetLocationStatistics()
+    {
+        return Ok();
+    }
+    
+    [HttpGet("statistics/purchase-price")]
+    public IActionResult GetPurchasePriceStatistics()
+    {
+        return Ok();
+    }
 }
