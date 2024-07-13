@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HomeBoxNet.API.Controllers.v1;
 
-
+[ApiExplorerSettings(GroupName = "v1")]
 [ApiController]
 [Route("v1/users")]
 public class UserController(AppDbContext context) : ControllerBase

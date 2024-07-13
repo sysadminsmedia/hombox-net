@@ -1,8 +1,8 @@
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HomeBoxNet.API.Controllers.v1;
 
+[ApiExplorerSettings(GroupName = "v1")]
 [ApiController]
 [Route("v1/locations")]
 public class LocationController : ControllerBase

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HomeBoxNet.API.Controllers.v1;
 
+[ApiExplorerSettings(GroupName = "v1")]
 [ApiController]
 [Route("v1")]
 public class ItemController : ControllerBase
