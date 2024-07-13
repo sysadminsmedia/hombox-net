@@ -19,7 +19,7 @@ public class ItemController : ControllerBase
     }
     
     [HttpPost("items")]
-    public IActionResult CreateItem()
+    public IActionResult CreateItem([FromBody] Requests.CreateItem request)
     {
         return Ok();
     }
@@ -55,7 +55,7 @@ public class ItemController : ControllerBase
     }
     
     [HttpPut("items/{id}")]
-    public IActionResult UpdateItem(int id)
+    public IActionResult UpdateItem(int id, [FromBody] Requests.UpdateItem request)
     {
         return Ok();
     }

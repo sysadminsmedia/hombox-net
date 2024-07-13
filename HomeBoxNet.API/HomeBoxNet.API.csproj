@@ -32,4 +32,8 @@
       <ProjectReference Include="..\HomeBoxNet.Migrate.Sqlite\HomeBoxNet.Migrate.Sqlite.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Controllers\v1\Responses\" />
+    </ItemGroup>
+
 </Project>
