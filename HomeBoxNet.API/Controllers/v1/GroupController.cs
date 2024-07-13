@@ -42,8 +42,14 @@ public class GroupController : ControllerBase
         return Ok();
     }
     
+    public class PurchasePriceStatisticsQuery
+    {
+        public string? Start { get; set; }
+        public string? End { get; set; }
+    }
+    
     [HttpGet("statistics/purchase-price")]
-    public IActionResult GetPurchasePriceStatistics()
+    public IActionResult GetPurchasePriceStatistics([FromQuery] PurchasePriceStatisticsQuery query)
     {
         return Ok();
     }

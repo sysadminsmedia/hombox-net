@@ -7,8 +7,14 @@ namespace HomeBoxNet.API.Controllers.v1;
 [Route("v1/locations")]
 public class LocationController : ControllerBase
 {
+    
+    public class GetLocationsQ
+    {
+        public string? FilterChildren { get; set; }
+    }
+    
     [HttpGet]
-    public IActionResult GetLocations()
+    public IActionResult GetLocations([FromQuery] GetLocationsQ query)
     {
         return Ok();
     }
@@ -19,8 +25,13 @@ public class LocationController : ControllerBase
         return Ok();
     }
     
+    public class GetLocationTreeQuery
+    {
+        public bool WithItems { get; set; }
+    }
+    
     [HttpGet("tree")]
-    public IActionResult GetLocationTree()
+    public IActionResult GetLocationTree([FromQuery] GetLocationTreeQuery query)
     {
         return Ok();
     }

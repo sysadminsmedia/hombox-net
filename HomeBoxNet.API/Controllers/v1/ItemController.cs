@@ -11,9 +11,19 @@ public class ItemController : ControllerBase
     {
         return Ok();
     }
+
+    public class ItemsQuery
+    {
+        public string? Q { get; set; }
+        public int? Page { get; set; }
+        public int? PageSize { get; set; }
+        public string? Labels { get; set; }
+        public string? Locations { get; set; }
+        public string? ParentIds { get; set; }
+    }
     
     [HttpGet("items")]
-    public IActionResult GetItems()
+    public IActionResult GetItems([FromQuery] ItemsQuery query)
     {
         return Ok();
     }
@@ -79,7 +89,7 @@ public class ItemController : ControllerBase
     }
     
     [HttpGet("qrcode")]
-    public IActionResult GetQRCode()
+    public IActionResult GetQrCode([FromQuery(Name = "data")] string data)
     {
         return Ok();
     }
