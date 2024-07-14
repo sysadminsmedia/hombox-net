@@ -1,6 +1,10 @@
+using HomeBoxNet.API.Controllers.v1.Requests;
+using HomeBoxNet.API.Controllers.v1.Responses;
 using HomeBoxNet.Data;
 using HomeBoxNet.Data.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using BC = BCrypt.Net.BCrypt;
 
 namespace HomeBoxNet.API.Controllers.v1;
 
@@ -9,16 +13,24 @@ namespace HomeBoxNet.API.Controllers.v1;
 [Route("v1/users")]
 public class UserController(AppDbContext context) : ControllerBase
 {
-    
     [HttpPost("login")]
-    public IActionResult Login([FromBody] User user)
+    public async Task<LoginResponse?> Login([FromForm] Login user, [FromQuery(Name = "provider")] string? provider)
     {
-        var dbUser = context.Users.First(x => x.Email == user.Email);
-        if (dbUser.Password == user.Password)
+        // Get the minimum information needed to verify the user login
+        var dbUser = await context.Users
+            .Where(x => x.Email == user.Username)
+            .Select(x => new { x.Password })
+            .FirstAsync();
+        if (BC.Verify(user.Password, dbUser.Password))
         {
-            return Ok();
+            return new LoginResponse
+            {
+                Token = "",
+                AttachmentToken = "",
+                ExpiresAt = DateTime.UtcNow
+            };
         }
-        return Unauthorized();
+        return null;
     }
     
     [HttpPost("logout")]
