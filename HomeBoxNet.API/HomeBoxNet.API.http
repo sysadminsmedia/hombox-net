@@ -1,6 +1,11 @@
 @HomeBoxNet.API_HostAddress = http://localhost:5160
 
-GET {{HomeBoxNet.API_HostAddress}}/weatherforecast/
+POST {{HomeBoxNet.API_HostAddress}}/v1/users/login/
 Accept: application/json
+Content-Type: application/json
 
+{
+  "email": "",
+  "password": ""
+}
 ###
