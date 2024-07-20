@@ -12,19 +12,19 @@ public class ActionController : ControllerBase
     {
         return Ok();
     }
-    
+
     [HttpPost("ensure-import-refs")]
     public IActionResult EnsureImportRefs()
     {
         return Ok();
     }
-    
+
     [HttpPost("set-primary-photos")]
     public IActionResult SetPrimaryPhotos()
     {
         return Ok();
     }
-    
+
     [HttpPost("zero-item-time-fields")]
     public IActionResult ZeroItemTimeFields()
     {

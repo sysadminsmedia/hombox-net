@@ -11,22 +11,22 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new()
+    c.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "HomeBoxNet.API", 
+        Title = "HomeBoxNet.API",
         Version = "v1",
-        License = new OpenApiLicense()
+        License = new OpenApiLicense
         {
             Name = "AGPL-3.0",
             Url = new Uri("https://www.gnu.org/licenses/agpl-3.0.html")
         },
         Description = "v1 of the HomeBox API. This is a replica of the original Go based rest API."
     });
-    c.SwaggerDoc("v2", new OpenApiInfo()
+    c.SwaggerDoc("v2", new OpenApiInfo
     {
         Title = "HomeBoxNet.API",
         Version = "v2",
-        License = new OpenApiLicense()
+        License = new OpenApiLicense
         {
             Name = "AGPL-3.0",
             Url = new Uri("https://www.gnu.org/licenses/agpl-3.0.html")

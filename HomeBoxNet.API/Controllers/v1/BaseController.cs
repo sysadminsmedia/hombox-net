@@ -12,7 +12,7 @@ public class BaseController : ControllerBase
     {
         return Ok();
     }
-    
+
     [HttpGet("status")]
     public IActionResult GetStatus()
     {

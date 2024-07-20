@@ -24,34 +24,34 @@ public class GroupController : ControllerBase
     {
         return Ok();
     }
-    
+
     [HttpGet("statistics")]
     public IActionResult GetStatistics()
     {
         return Ok();
     }
-    
+
     [HttpGet("statistics/labels")]
     public IActionResult GetLabelStatistics()
     {
         return Ok();
     }
-    
+
     [HttpGet("statistics/locations")]
     public IActionResult GetLocationStatistics()
     {
         return Ok();
     }
-    
-    public class PurchasePriceStatisticsQuery
-    {
-        public string? Start { get; set; }
-        public string? End { get; set; }
-    }
-    
+
     [HttpGet("statistics/purchase-price")]
     public IActionResult GetPurchasePriceStatistics([FromQuery] PurchasePriceStatisticsQuery query)
     {
         return Ok();
+    }
+
+    public class PurchasePriceStatisticsQuery
+    {
+        public string? Start { get; set; }
+        public string? End { get; set; }
     }
 }

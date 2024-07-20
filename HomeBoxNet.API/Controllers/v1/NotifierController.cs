@@ -12,25 +12,25 @@ public class NotifierController : ControllerBase
     {
         return Ok();
     }
-    
+
     [HttpPost]
     public IActionResult CreateNotifier()
     {
         return Ok();
     }
-    
+
     [HttpPost("test")]
     public IActionResult TestNotifier()
     {
         return Ok();
     }
-    
+
     [HttpPut("{id}")]
     public IActionResult UpdateNotifier()
     {
         return Ok();
     }
-    
+
     [HttpDelete("{id}")]
     public IActionResult DeleteNotifier()
     {
